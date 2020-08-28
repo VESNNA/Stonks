@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,109 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stonks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ari-PY-k1a">
+                                <rect key="frame" x="0.0" y="593" width="414" height="269"/>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="rWq-Cx-ZmF">
+                                <rect key="frame" x="40" y="84" width="334" height="232"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0PH-oA-cYJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="28"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Company name" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="950-8X-N5g">
+                                                <rect key="frame" x="0.0" y="0.0" width="144" height="28"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="nameLbl" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="45F-Ua-Ga4">
+                                                <rect key="frame" x="154" y="0.0" width="180" height="28"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eO9-qi-kZz">
+                                        <rect key="frame" x="0.0" y="68" width="334" height="28"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Symbol" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="rBU-D2-GkV">
+                                                <rect key="frame" x="0.0" y="0.0" width="69" height="28"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="symbolLbl" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="WuQ-Rv-Td3">
+                                                <rect key="frame" x="79" y="0.0" width="255" height="28"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3F8-TW-FXY">
+                                        <rect key="frame" x="0.0" y="136" width="334" height="28"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Price" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="qoV-9F-ZMV">
+                                                <rect key="frame" x="0.0" y="0.0" width="52" height="28"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="priceLbl" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="AcU-L5-NW6">
+                                                <rect key="frame" x="62" y="0.0" width="272" height="28"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iFc-xK-Uu2">
+                                        <rect key="frame" x="0.0" y="204" width="334" height="28"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Price change" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="axU-P2-fb3">
+                                                <rect key="frame" x="0.0" y="0.0" width="118" height="28"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="priceChangeLbl" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="oP5-ra-U4u">
+                                                <rect key="frame" x="128" y="0.0" width="206" height="28"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="MLO-qa-wdq">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ari-PY-k1a" secondAttribute="bottom" id="BEO-0o-nrw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rWq-Cx-ZmF" secondAttribute="trailing" constant="40" id="D7X-oN-lBN"/>
+                            <constraint firstItem="MLO-qa-wdq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ObD-cG-Fe7"/>
+                            <constraint firstItem="ari-PY-k1a" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="RGR-wv-mWs"/>
+                            <constraint firstItem="ari-PY-k1a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ubd-vB-nHd"/>
+                            <constraint firstItem="ari-PY-k1a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ups-2C-cJQ"/>
+                            <constraint firstItem="rWq-Cx-ZmF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Xxt-OS-UHw"/>
+                            <constraint firstItem="MLO-qa-wdq" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-5" id="cG1-qv-hRz"/>
+                            <constraint firstItem="rWq-Cx-ZmF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="rbl-pO-dvF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="nameLbl" destination="45F-Ua-Ga4" id="xcs-5P-7nj"/>
+                        <outlet property="networkActivityIndicator" destination="MLO-qa-wdq" id="9hB-ZF-Iou"/>
+                        <outlet property="picker" destination="ari-PY-k1a" id="aYy-T7-FZH"/>
+                        <outlet property="priceChangeLbl" destination="oP5-ra-U4u" id="Mam-Pa-HcS"/>
+                        <outlet property="priceLbl" destination="AcU-L5-NW6" id="Fs4-si-ODq"/>
+                        <outlet property="symbolLbl" destination="WuQ-Rv-Td3" id="aUY-nA-JUO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="132.58928571428572"/>
         </scene>
     </scenes>
 </document>
