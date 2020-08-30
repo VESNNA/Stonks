@@ -58,4 +58,14 @@ final class APIStockManager: APIManager {
         }, completionHandler: completionHandler)
     }
     
+    func fetchLogoFor(symbol: String) -> Data {
+        let url = URL(string:"https://storage.googleapis.com/iex/api/logos/\(symbol).png")
+        var image = Data()
+        if let data = try? Data(contentsOf: url!)
+        {
+            image = data
+            //UIImage(data: data)
+        }
+        return image
+    }
 }
