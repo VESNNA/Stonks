@@ -13,6 +13,10 @@
 		5BBCE4C124F98062007D9535 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBCE4BF24F98062007D9535 /* Main.storyboard */; };
 		5BBCE4C324F98066007D9535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BBCE4C224F98066007D9535 /* Assets.xcassets */; };
 		5BBCE4C624F98066007D9535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBCE4C424F98066007D9535 /* LaunchScreen.storyboard */; };
+		5BBCE4CE24F98AE2007D9535 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCE4CD24F98AE2007D9535 /* APIManager.swift */; };
+		5BBCE4D024F993C1007D9535 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCE4CF24F993C1007D9535 /* Model.swift */; };
+		5BBCE4D224FB8069007D9535 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCE4D124FB8069007D9535 /* ErrorManager.swift */; };
+		5BBCE4D424FB8120007D9535 /* APIStockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCE4D324FB8120007D9535 /* APIStockManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		5BBCE4C224F98066007D9535 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BBCE4C524F98066007D9535 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BBCE4C724F98066007D9535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BBCE4CD24F98AE2007D9535 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		5BBCE4CF24F993C1007D9535 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		5BBCE4D124FB8069007D9535 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		5BBCE4D324FB8120007D9535 /* APIStockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStockManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,10 @@
 				5BBCE4B924F98062007D9535 /* AppDelegate.swift */,
 				5BBCE4BB24F98062007D9535 /* SceneDelegate.swift */,
 				5BBCE4BD24F98062007D9535 /* ViewController.swift */,
+				5BBCE4CD24F98AE2007D9535 /* APIManager.swift */,
+				5BBCE4D324FB8120007D9535 /* APIStockManager.swift */,
+				5BBCE4D124FB8069007D9535 /* ErrorManager.swift */,
+				5BBCE4CF24F993C1007D9535 /* Model.swift */,
 				5BBCE4BF24F98062007D9535 /* Main.storyboard */,
 				5BBCE4C224F98066007D9535 /* Assets.xcassets */,
 				5BBCE4C424F98066007D9535 /* LaunchScreen.storyboard */,
@@ -138,7 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BBCE4D224FB8069007D9535 /* ErrorManager.swift in Sources */,
+				5BBCE4D024F993C1007D9535 /* Model.swift in Sources */,
+				5BBCE4CE24F98AE2007D9535 /* APIManager.swift in Sources */,
 				5BBCE4BE24F98062007D9535 /* ViewController.swift in Sources */,
+				5BBCE4D424FB8120007D9535 /* APIStockManager.swift in Sources */,
 				5BBCE4BA24F98062007D9535 /* AppDelegate.swift in Sources */,
 				5BBCE4BC24F98062007D9535 /* SceneDelegate.swift in Sources */,
 			);
