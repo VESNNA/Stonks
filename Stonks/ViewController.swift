@@ -120,7 +120,10 @@ class ViewController: UIViewController {
     func loadLogo(symbol: String) {
         
         let imageData = infoManager.fetchLogoFor(symbol: symbol)
-        updateLogo(imageData: imageData)
+        
+        DispatchQueue.main.async {
+            self.updateLogo(imageData: imageData)
+        }
     }
     
     func updateLogo(imageData: Data) {
