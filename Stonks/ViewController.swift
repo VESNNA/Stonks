@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         "Amazon": "AMZN",
         "Facebook": "FB"
     ]
-
+    
     @IBOutlet weak var nameLbl: UITextField!
     @IBOutlet weak var symbolLbl: UITextField!
     @IBOutlet weak var priceLbl: UITextField!
@@ -26,7 +26,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var networkActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var logoLoadingActivityController: UIActivityIndicatorView!
     
+    enum Indicators {
+        case network
+        case logo
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +48,9 @@ class ViewController: UIViewController {
     
     func onStartup() {
         networkActivityIndicator.hidesWhenStopped = true
-        //networkActivityIndicator.color = .black
+        logoLoadingActivityController.hidesWhenStopped = true
         
-        removeTextOnLoad()
+        removeOnLoad()
         
         let selectedRow = picker.selectedRow(inComponent: 0)
         let selectedSymbol = Array(companies.values)[selectedRow]
@@ -53,16 +58,25 @@ class ViewController: UIViewController {
         requestStockInfo(for: selectedSymbol)
     }
     
-    func removeTextOnLoad() {
+    func removeOnLoad() {
         let removeTextOnLoad = [nameLbl, symbolLbl, priceLbl, priceChangeLbl]
         for label in removeTextOnLoad {
             label?.text = "-"
             label?.textColor = .black
         }
+        
+        imageView.image = nil
     }
     
-    func toogleActivityIndicator(activeNow on: Bool) {
-        on ? networkActivityIndicator.startAnimating() : networkActivityIndicator.stopAnimating()
+    func toogleActivityIndicator(indicator activity: Indicators, activeNow on: Bool) {
+        
+        switch activity {
+        case .network:
+            on ? networkActivityIndicator.startAnimating() : networkActivityIndicator.stopAnimating()
+        case .logo:
+            on ? logoLoadingActivityController.startAnimating() : logoLoadingActivityController.stopAnimating()
+        }
+        
     }
     
     
@@ -74,15 +88,19 @@ class ViewController: UIViewController {
     
     func requestStockInfo(for symbol: String) {
         
-        toogleActivityIndicator(activeNow: true)
-        removeTextOnLoad()
+        
+        toogleActivityIndicator(indicator: .network, activeNow: true)
+        toogleActivityIndicator(indicator: .logo, activeNow: true)
+        removeOnLoad()
+        
         
         DispatchQueue.global(qos: .userInitiated).async {
             
+            self.loadLogo(symbol: symbol)
             
             self.infoManager.fetchStockInfoFor(symbol: symbol) { (result) in
                 
-                self.toogleActivityIndicator(activeNow: false)
+                self.toogleActivityIndicator(indicator: .network, activeNow: false)
                 
                 switch result {
                 case .Success(let stockInfo):
@@ -96,6 +114,19 @@ class ViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
+        }
+    }
+    
+    func loadLogo(symbol: String) {
+        
+        let imageData = infoManager.fetchLogoFor(symbol: symbol)
+        updateLogo(imageData: imageData)
+    }
+    
+    func updateLogo(imageData: Data) {
+        self.toogleActivityIndicator(indicator: .logo, activeNow: false)
+        if let image = UIImage(data: imageData) {
+            imageView.image = image
         }
     }
     
@@ -114,7 +145,7 @@ class ViewController: UIViewController {
             priceChangeLbl.textColor = .green
         }
     }
-
+    
 }
 
 
