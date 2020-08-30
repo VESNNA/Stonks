@@ -69,13 +69,15 @@ class ViewController: UIViewController {
     
     func requestStockInfo(for symbol: String) {
         
-        networkActivityIndicator.startAnimating()
+        toogleActivityIndicator(activeNow: true)
         removeTextOnLoad()
         
         DispatchQueue.global(qos: .userInitiated).async {
             
             
             self.infoManager.fetchStockInfoFor(symbol: symbol) { (result) in
+                
+                self.toogleActivityIndicator(activeNow: false)
                 
                 switch result {
                 case .Success(let stockInfo):
@@ -89,11 +91,7 @@ class ViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
-            
-            
         }
-        
-        networkActivityIndicator.stopAnimating()
     }
     
     func updateUIWith(info stock: Stock) {
