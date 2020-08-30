@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var priceChangeLbl: UITextField!
     @IBOutlet weak var networkActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var imageView: UIImageView!
     
     
     override func viewDidLoad() {
@@ -58,6 +59,10 @@ class ViewController: UIViewController {
             label?.text = "-"
             label?.textColor = .black
         }
+    }
+    
+    func toogleActivityIndicator(activeNow on: Bool) {
+        on ? networkActivityIndicator.startAnimating() : networkActivityIndicator.stopAnimating()
     }
     
     
