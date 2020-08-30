@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         "Facebook": "FB"
     ]
     
+    var refreshTimer: Timer!
+    
     @IBOutlet weak var nameLbl: UITextField!
     @IBOutlet weak var symbolLbl: UITextField!
     @IBOutlet weak var priceLbl: UITextField!
@@ -41,7 +43,7 @@ class ViewController: UIViewController {
         
         onStartup()
         
-        
+        setupTimer()
         
     }
     
@@ -86,6 +88,8 @@ class ViewController: UIViewController {
         requestStockInfo(for: selectedSymbol)
     }
     
+    //MARK: - Fetching data
+    
     func requestStockInfo(for symbol: String) {
         
         
@@ -126,6 +130,8 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - Updating UI
+    
     func updateLogo(imageData: Data) {
         self.toogleActivityIndicator(indicator: .logo, activeNow: false)
         if let image = UIImage(data: imageData) {
@@ -147,6 +153,24 @@ class ViewController: UIViewController {
         default:
             priceChangeLbl.textColor = .green
         }
+    }
+    
+    // MARK: - Autorefreshing
+
+    func setupTimer() {
+        refreshTimer = Timer(timeInterval: 60*5, target: self, selector: #selector(refreshEvery5Minutes), userInfo: nil, repeats: true)
+        RunLoop.main.add(refreshTimer, forMode: .default)
+    }
+
+    @objc func refreshEvery5Minutes() {
+        resetTimer()
+        onStartup()
+    }
+
+    func resetTimer() {
+        refreshTimer.invalidate()
+        refreshTimer = nil
+        setupTimer()
     }
     
 }
