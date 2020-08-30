@@ -54,13 +54,13 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3F8-TW-FXY">
                                         <rect key="frame" x="0.0" y="136" width="334" height="28"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Price" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="qoV-9F-ZMV">
-                                                <rect key="frame" x="0.0" y="0.0" width="52" height="28"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Price" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="qoV-9F-ZMV">
+                                                <rect key="frame" x="0.0" y="0.0" width="46" height="28"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="priceLbl" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="AcU-L5-NW6">
-                                                <rect key="frame" x="62" y="0.0" width="272" height="28"/>
+                                                <rect key="frame" x="56" y="0.0" width="278" height="28"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
