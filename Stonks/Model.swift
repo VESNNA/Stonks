@@ -21,7 +21,7 @@ extension Stock: JSONDecodable {
             let companyName = JSON["companyName"] as? String,
             let symbol = JSON["symbol"] as? String,
             let price = JSON["latestPrice"] as? Double,
-            let priceChange = JSON["chang"] as? Double
+            let priceChange = JSON["change"] as? Double
             
         else {
                 print("JSON processing error")
