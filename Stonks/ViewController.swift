@@ -47,6 +47,14 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if let pageVC = storyboard?.instantiateViewController(identifier: "pageVC") as? PageViewController {
+            present(pageVC, animated: true, completion: nil)
+        }
+    }
+    
     
     func onStartup() {
         networkActivityIndicator.hidesWhenStopped = true
