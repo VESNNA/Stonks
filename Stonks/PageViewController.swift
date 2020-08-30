@@ -37,6 +37,12 @@ class PageViewController: UIPageViewController {
         
         return contentVC
     }
+    
+    func nextVC(atIndex index: Int) {
+        if let contentVC = displayViewController(atIndex: index + 1) {
+            setViewControllers([contentVC], direction: .forward, animated: true, completion: nil)
+        }
+    }
 }
 
 extension PageViewController: UIPageViewControllerDataSource {
@@ -51,5 +57,4 @@ extension PageViewController: UIPageViewControllerDataSource {
         index += 1
         return displayViewController(atIndex: index)
     }
-    
 }
