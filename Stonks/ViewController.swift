@@ -76,6 +76,14 @@ class ViewController: UIViewController {
         priceLbl.text = String(stock.price)
         priceChangeLbl.text = String(stock.change)
         
+        switch stock.change {
+        case ..<0:
+            priceChangeLbl.textColor = .red
+        case 0:
+            priceChangeLbl.textColor = .black
+        default:
+            priceChangeLbl.textColor = .green
+        }
     }
 
 }
